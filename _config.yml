@@ -1,7 +1,7 @@
 # This is the default format. 
 # For more see: http://jekyllrb.com/docs/permalinks/
 permalink: /:categories/:year/:month/:day/:title 
-
+baseurl: /
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 pygments: true
 
@@ -107,7 +107,6 @@ JB :
         token : '_MIXPANEL_TOKEN_'
     piwik :
         #baseURL : 'myserver.tld/piwik' # Piwik installation address (without protocol)
-        baseURL : '/'
         idsite : '1'                   # the id of the site on Piwik
 
   # Settings for sharing helper. 

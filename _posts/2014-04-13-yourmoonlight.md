@@ -2,7 +2,7 @@
 layout: post
 title: "yourmoonlight"
 description: ""
-category: 
+category: 杂记
 tags: [intro]
 ---
 {% include JB/setup %}
@@ -19,3 +19,14 @@ tags: [intro]
 - first
 - second
 - third
+
+
+{% highlight ruby %}
+def show
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
+{% endhighlight %}

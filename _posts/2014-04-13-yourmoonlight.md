@@ -21,7 +21,7 @@ tags: [intro]
 - third
 
 
-{% highlight ruby %}
+{% highlight ruby linenos %}
 def show
   @widget = Widget(params[:id])
   respond_to do |format|

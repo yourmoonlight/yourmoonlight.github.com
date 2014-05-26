@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "想学一下markdown,test"
+title: "markdown,test"
 description: ""
 category: learning
 tags: markdown test

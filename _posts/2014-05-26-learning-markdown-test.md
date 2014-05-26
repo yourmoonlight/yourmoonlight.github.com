@@ -3,7 +3,7 @@ layout: post
 title: "想学一下markdown,test"
 description: ""
 category: learning
-tags: [markdown] [test]
+tags: [markdown]
 ---
 {% include JB/setup %}
 #怎么学markdown呢，我的办法是打算把github guides 上面的*Mastering Markdown*上面的例子敲打一遍--！。。

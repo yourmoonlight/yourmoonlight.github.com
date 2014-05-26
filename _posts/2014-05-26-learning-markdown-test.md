@@ -1,10 +1,6 @@
 ---
 layout: post
-<<<<<<< HEAD
-title: "markdown,test"
-=======
 title: "ѧϰMarkdown,this is a test"
->>>>>>> 6f87d341a862576e34b129282b6d7cc4c9da1645
 description: ""
 category: learning
 tags: markdown test

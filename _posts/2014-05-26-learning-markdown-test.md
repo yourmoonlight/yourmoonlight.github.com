@@ -63,21 +63,17 @@ GitHub also supports something called code fencing, which allows for multiple
 lines without indentation:
 
 ```
-
 if (isAwesome){
     return true
 }
-
 ```
 
 And if you'd like to use syntax highlighting, include the language:
 
 ```javascript
-
 if (isAwesome){
     return true
 }
-
 ```
 
 #### Extras
@@ -86,10 +82,11 @@ GitHub supports many extras in Markdown that help you reference and
 link to people. If you ever want to direct a comment at someone, you
 can prefix their name with an @ symbol: Hey @yourmoonlight - welldown!
 
-But I have to admit , tasts lists are my favorite:
+But I have to admit , tasks lists are my favorite:
+
 
 - [x] This is a complete item
-- [ ] This ia an incomplete item
+- [ ] This ia an incomplete item  (task list 也不能正常显示)
 
-And, of course emoji! :sparkles: :camel: :boom:
+And, of course emoji! :sparkles: :camel: :boom: (不知道表情为什么不能显示。。)
 

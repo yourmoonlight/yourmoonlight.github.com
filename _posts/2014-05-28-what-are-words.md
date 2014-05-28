@@ -1,3 +1,11 @@
+---
+layout: post
+title: "What Are Words"
+description: ""
+category: 杂记
+tags: song
+---
+{% include JB/setup %}
 ###What Are Words -- chris medina
 
 Anywhere you are,I am near

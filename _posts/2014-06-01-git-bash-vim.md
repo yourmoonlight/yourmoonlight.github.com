@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "win7下gitbash，vim乱码问题解决方案"
 description: ""

@@ -27,4 +27,4 @@ tags: vim gitbash
 let &termencoding=&encoding
    
 set fileencodings=utf-8,gbk
-
+ÄãºÃ

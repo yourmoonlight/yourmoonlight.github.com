@@ -1,28 +1,28 @@
 ---
 layout: post
-title: "在win7下使用gitbash，vim遇到的乱码问题"
+title: "win7涓嬬敤gitbash,vim涔辩爜闂瑙ｅ喅鏂规"
 description: ""
 category: vim
 tags: vim gitbash 
 ---
 {% include JB/setup %}
-###遇到的问题
-1. gitbash中使用ls命令汉字会显示成问号
+###锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
+1. gitbash锟斤拷使锟斤拷ls锟斤拷锟筋汉锟街伙拷锟斤拷示锟斤拷锟绞猴拷
 
-2. 使用vim打开一个file会显示乱码
+2. 使锟斤拷vim锟斤拷锟斤拷一锟斤拷file锟斤拷锟斤拷示锟斤拷锟斤拷
 
-3. vim中显示正常但是输入汉字却是问号
+3. vim锟斤拷锟斤拷示锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟诫汉锟斤拷却锟斤拷锟绞猴拷
 
-第一个问题，可以修改以下路径的file
+锟斤拷一锟斤拷锟斤拷锟解，锟斤拷锟斤拷锟睫革拷锟斤拷锟斤拷路锟斤拷锟斤拷file
 
 /etc/git-completion.bash:
 
-添加 alias ls='ls --show-control-chars --color=auto' 
+锟斤拷锟斤拷 alias ls='ls --show-control-chars --color=auto' 
 
-第二个问题在vim中输入这个命令:set encoding=utf-8 termencoding=gbk fileencoding=utf-8
+锟节讹拷锟斤拷锟斤拷锟斤拷锟斤拷vim锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷:set encoding=utf-8 termencoding=gbk fileencoding=utf-8
 
 
-第三个问题修改/Git/share/vim目录中的vimrc 添加这两行
+锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟睫革拷/Git/share/vim目录锟叫碉拷vimrc 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
 
 let &termencoding=&encoding
    

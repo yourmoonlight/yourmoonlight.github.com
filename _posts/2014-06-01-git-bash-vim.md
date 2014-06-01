@@ -25,6 +25,6 @@ tags: vim gitbash
 第三个问题修改/Git/share/vim目录中的vimrc 添加这两行
 
 let &termencoding=&encoding
-
+   
 set fileencodings=utf-8,gbk
 

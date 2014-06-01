@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "win7下用gitbash,vim乱码问题解决方案"
+title: "win7下用gitbash,vim乱码问���â�解决方案"
 description: ""
 category: vim
 tags: vim gitbash 

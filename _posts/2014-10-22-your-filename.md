@@ -1,10 +1,6 @@
 ---
-published: true
----
-
----
 layout: post
-title: "批量重命名字幕（二）"
+title: "test"
 description: ""
 category: learning
 tags: python 

@@ -1,10 +1,6 @@
 ---
-published: false
----
-
----
 layout: post
-title: "批量重命名字幕（二）"
+title: "test use proseio"
 description: ""
 category: learning
 tags: python 

@@ -6,9 +6,10 @@ published: true
 layout: post
 title: "试试prose.io"
 description: ""
-category: 杂记
+category: "杂记"
 tags: ""
---- {% include JB/setup %}
+---
+{% include JB/setup %}
 
 ## A New Post
 

@@ -8,6 +8,12 @@ pygments: true
 markdown: kramdown
 kramdown:
   input: GFM
+  auto_ids:      true
+  footnote_nr:   1
+  entity_output: as_char
+  toc_levels:    1..6
+  smart_quotes:  lsquo,rsquo,ldquo,rdquo
+  use_coderay:   false
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #

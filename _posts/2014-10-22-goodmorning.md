@@ -11,3 +11,8 @@ if (isAwesome){
     return true
     }
 ```
+
+{% highlight ruby %}
+   def foo
+      end
+{% endhighlight %}

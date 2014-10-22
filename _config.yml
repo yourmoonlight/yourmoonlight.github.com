@@ -3,6 +3,7 @@
 permalink: /:categories/:year/:month/:day/:title 
 #baseurl: /
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+highlighter: pygments
 pygments: true
 markdown: kramdown
 kramdown:

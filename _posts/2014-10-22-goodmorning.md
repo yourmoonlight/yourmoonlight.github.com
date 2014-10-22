@@ -5,15 +5,6 @@ description: ""
 category: 杂记
 ---
 ##今天又熬夜了。。。
-```python
-
-import sys
-
-print sys.path
-
-print "look!"
-
-```
 
 ```javascript
 if (isAwesome){

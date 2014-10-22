@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 ie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8 ie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9 ie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!-- GoStats JavaScript Based Code -->
+<script type="text/javascript" src="http://gostats.cn/js/counter.js"></script>
+<script type="text/javascript">_gos='monster.gostats.cn';_goa=473110;
+_got=4;_goi=176;_goz=0;_god='hits';_gol='流量统计';_GoStatsRun();</script>
+<noscript><a target="_blank" title="流量统计" 
+href="http://gostats.cn"><img alt="流量统计" 
+src="http://monster.gostats.cn/bin/count/a_473110/t_4/i_176/z_0/show_hits/counter.png" 
+style="border-width:0" /></a></noscript>
+<!-- End GoStats JavaScript Based Code -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>批量重命名字幕文件</title>
+	<meta name="author" content="yourmoonlight">
+	<link href='/assets/themes/the-minimum/css/style.css' rel="stylesheet" media="all">
+	<link href="http://feeds.feedburner.com/" rel="alternate" title="批量重命名字幕文件" type="application/atom+xml">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
+</head>
+<body>
+
+<div id="page" class="hentry">
+	<header class="the-header">
+		<div class="unit-head">
+			<div class="unit-inner unit-head-inner">
+				<p class="logo"><a href="/">Yourmoonlight's Blog</a></p>
+				<nav class="nav-global">
+					<ul>
+						<li class="archive"><a href="/archive.html">archive</a></li>
+						<li class="page"><a href="/pages.html">pages</a></li>
+						<li class="category"><a href="/categories.html">categories</a></li>
+						<li class="tag"><a href="/tags.html">tags</a></li>
+						<!-- <li class="forkme"><iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=plusjade&repo=jekyll-bootstrap&type=fork&count=true"
+								allowtransparency="true" frameborder="0" scrolling="0" width="95px" height="20px"></iframe></li> -->
+					</ul>
+				</nav>
+			</div><!-- unit-inner -->
+		</div><!-- unit-head -->
+	</header>
+	<div class="body" role="main">
+		<div class="unit-body">
+			<div class="unit-inner unit-body-inner">
+				<div class="entry-content">
+					
+<article class="unit-article layout-post">
+	<div class="unit-inner unit-article-inner">
+		<div class="content">
+			<header>
+				<div class="unit-head">
+					<div class="unit-inner unit-head-inner">
+						<h1 class="h2 entry-title">批量重命名字幕文件</h1>
+					</div><!-- unit-inner -->
+				</div><!-- unit-head -->
+			</header>
+
+			<div class="bd">
+				<div class="entry-content">
+					
+<p>###程序员都是”懒”家伙吧<br />
+今天从网上下载一些英文视频教程， 虽然文件不大，但是分成了很多小节，一节几分钟的样子，<br />
+这样每过几分钟就得手动添加字幕，好麻烦。我就想为什么播放器不能自动加载字幕呢，我都已经把<br />
+字幕跟视频放在一个文件夹了，播放器应该有这个功能吧？上网搜索了一下果然有这个功能，只是需<br />
+要字幕文件跟视频文件同名才能自动加载。对比了下字幕和视频的文件名，区别只是字幕文件名多了<br />
+个”.en”。要手动改么？当然不要，有上百个字幕文件，太麻烦。<br />
+那么下面，就稍微动动手吧。</p>
+
+<p>###解决方案<br />
+1. 把文件夹里的所有文件名都列出来。</p>
+
+<ol>
+  <li>
+    <p>把其中.srt结尾的字幕文件找出来。</p>
+  </li>
+  <li>
+    <p>给它重命名。</p>
+  </li>
+</ol>
+
+<p>依着这个步骤，谷歌了一下，每一步需要用到的function，也就找出来了，再看<br />
+看Python Doc，就知道怎么用了。 下面是代码：</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#777"># -*- coding: utf-8 -*-</span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#777">#如果让KMPlayer自动加载字幕，则需要字幕文件名跟video文件名一样。</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#777">#字幕文件太多了，手动怎么改的过来？所以有了下面的这个小程序。</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">os</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#777">#这个路径前面要加r, 不然会出现error-123.</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>path = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#E40">r</span><span style="color:#710">&quot;</span><span style="color:#D20">x:</span><span style="color:#D20">\x</span><span style="color:#D20">xxxxx</span><span style="color:#D20">\x</span><span style="color:#D20">xxxx</span><span style="color:#D20">\x</span><span style="color:#D20">xxxxx</span><span style="color:#D20">\x</span><span style="color:#D20">xxxx</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#080;font-weight:bold">for</span> <span style="color:#369;font-weight:bold">file</span> <span style="color:#080;font-weight:bold">in</span> os.listdir(path):
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>        <span style="color:#080;font-weight:bold">if</span> <span style="color:#369;font-weight:bold">file</span>.endswith(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">.srt</span><span style="color:#710">&quot;</span></span>):
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>                <span style="color:#777">#print file</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>                newname = <span style="color:#369;font-weight:bold">file</span>.replace(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">.en.srt</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">.srt</span><span style="color:#710">&quot;</span></span>)
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>                <span style="color:#777">#print newname</span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>                os.rename(os.path.join(path, <span style="color:#369;font-weight:bold">file</span>), os.path.join(path, newname))                
+</pre></div>
+</div>
+</div>
+
+
+					<div class="meta">
+						<p class="date-publish">
+							Published: 
+							<date class="date-pub" title="2014-07-13T00:00:00+08:00" datetime="2014-07-13T00:00:00+08:00" pubdate>
+							<span class="month"><abbr>July</abbr></span>
+							<span class="day">13</span>
+							<span class="year">2014</span>
+							</date>
+						</p>
+						<ul class="list-category list-linear">
+							<li class="list-head">category: </li>
+							
+							
+
+
+  
+     
+    	<li><a href="/categories.html#learning-ref">
+    		learning <span>3</span>
+    	</a></li>
+    
+  
+
+
+						</ul>
+						<ul class="list-tag list-linear">
+							<li class="list-head">tags: </li>
+							
+							
+
+
+  
+     
+    	<li><a href="/tags.html#python-ref">python <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#重命名-ref">重命名 <span>1</span></a></li>
+    
+  
+
+
+
+						</ul>
+					</div><!-- meta -->
+				</div><!-- entry-content -->
+				<div class="misc-content">
+					<div class="social">
+						<ul class="list-linear">
+							<li><div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="" data-lang="en">Tweet</a></div></li>
+							<li><div class="twitter-follow"><a href="https://twitter.com/" class="twitter-follow-button" data-show-count="false" data-lang="en"></a></div></li>
+						</ul>
+					</div>
+					
+					
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'yourmoonlight'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+				</div><!-- misc-content -->
+				
+			</div><!-- bd -->
+			<footer class="unit-foot">
+				<div class="unit-inner unit-foot-inner">
+					<nav class="pagination">
+						<ul>
+							
+							<li class="prev"><a class="internal" rel="prev"  href="/vim/2014/06/01/git-bash-vim" title="View win7下gitbash，vim乱码问题解决方案">&laquo; win7下gitbash，vim乱码问题解决方案</a></li>
+							
+							
+							<li class="pipe"> | </li>
+							
+							
+							<li class="next"><a class="internal" rel="next"  href="/learning/2014/07/13/rename-srt2" title="View 批量重命名字幕（二）">批量重命名字幕（二） &raquo;</a></li>
+							
+						</ul>
+					</nav>
+					<p class="gotop">
+						<a href="#page">Back to Top</a>
+					</p>
+				</div>
+			</footer>
+
+		</div><!-- content -->
+	</div><!-- unit-inner -->
+</article>
+
+
+				</div>
+			</div><!-- unit-inner -->
+		</div><!-- unit-body -->
+	</div><!-- body -->
+	<footer class="the-footer">
+		<div class="unit-foot">
+			<div class="unit-inner unit-foot-inner">
+				<div class="misc vcard">
+					<h4>about</h4>
+					<ul>
+						<li class="contact"><address><span class="author fn n">yourmoonlight</span> - <span class="fn email">foxkingmoonlight@gmail.com</span></address></li>
+						<li class="github"><a href="http://github.com/yourmoonlight/" rel="me">github.com/yourmoonlight</a></li>
+						<!-- <li class="twitter"><a href="http://twitter.com//" rel="me">twitter.com/</a></li> -->
+						<li class="rss"><a href="http://www.yourmoonlight.com/rss.xml">Subscribe to RSS Feed</a></li>
+					</ul>
+				</div><!-- misc -->
+				<p class="license">
+					<a> © 2013-2014 yourmoonlight </a>.<br>
+					Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.
+				</p>
+			</div><!-- unit-foot-inner -->
+		</div><!-- unit-foot -->
+	</footer>
+</div><!-- page -->
+<script>
+	(function(d, s) {
+		var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.src = url; js.id = id;
+		fjs.parentNode.insertBefore(js, fjs);
+		};
+	load('//platform.twitter.com/widgets.js', 'tweetjs');
+	// load('https://apis.google.com/js/plusone.js', 'gplus1js'); // Checkout http://j.mp/ApDgMr for usage html for this is <div class="g-plusone" data-size="medium"></div>
+	// load('//connect.facebook.net/en_US/all.js#xfbml=1', 'fbjssdk'); // Checkout http://j.mp/wZw2xR for using open graph protorol html for this is <div class="fb-like" data-href="/learning/2014/07/13/rename-srt" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="verdana"></div>
+	}(document, 'script'));
+</script>
+<script>
+/*! A fix for the iOS orientationchange zoom bug.Script by @scottjehl, rebound by @wilto. MIT License.*/
+(function(j){var i=j.document;if(!i.querySelectorAll){return}var l=i.querySelectorAll("meta[name=viewport]")[0],a=l&&l.getAttribute("content"),h=a+", maximum-scale=1.0",d=a+", maximum-scale=10.0",g=true,c=j.orientation,k=0;if(!l){return}function f(){l.setAttribute("content",d);g=true}function b(){l.setAttribute("content",h);g=false}function e(m){c=Math.abs(j.orientation);k=Math.abs(m.gamma);if(k>8&&c===0){if(g){b()}}else{if(!g){f()}}}j.addEventListener("orientationchange",f,false);j.addEventListener("deviceorientation",e,false)})(this);
+</script>
+
+  
+</body>
+</html>
+

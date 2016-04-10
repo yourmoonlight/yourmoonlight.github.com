@@ -3,8 +3,7 @@
 permalink: /:categories/:year/:month/:day/:title 
 #baseurl: /
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-highlighter: pygments
-pygments: true
+highlighter: rouge
 markdown: kramdown
 kramdown:
   input: GFM
@@ -13,8 +12,7 @@ kramdown:
   entity_output: as_char
   toc_levels:    1..6
   smart_quotes:  lsquo,rsquo,ldquo,rdquo
-  use_coderay:   true
-  coderay:
+  syntax_highlighter_opts:
     coderay_wrap:              div
     coderay_line_numbers:      inline
     coderay_line_number_start: 1

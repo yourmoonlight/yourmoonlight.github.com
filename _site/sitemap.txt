@@ -1,20 +1,18 @@
 
-http://yourmoonlight.com/sitemap.txt
-http://yourmoonlight.com/categories.html
+http://yourmoonlight.com/about
+http://yourmoonlight.com/archive
 http://yourmoonlight.com/atom.xml
-http://yourmoonlight.com/archive.html
-http://yourmoonlight.com/pages.html
-http://yourmoonlight.com/about.html
+http://yourmoonlight.com/categories
+http://yourmoonlight.com/
+http://yourmoonlight.com/pages
 http://yourmoonlight.com/rss.xml
-http://yourmoonlight.com/tags.html
-http://yourmoonlight.com/index.html
+http://yourmoonlight.com/sitemap.txt
+http://yourmoonlight.com/tags
 
-http://yourmoonlight.com/%E6%9D%82%E8%AE%B0/2014/10/22/goodmorning
+http://yourmoonlight.com/learning/2016/05/04/write-something-different-2016
+http://yourmoonlight.com/%E6%9D%82%E8%AE%B0/2014/10/28/want-the-rainbow
+http://yourmoonlight.com/%E6%9D%82%E8%AE%B0/2014/10/28/am-i-too-late
 http://yourmoonlight.com/learning/2014/07/13/rename-srt2
 http://yourmoonlight.com/learning/2014/07/13/rename-srt
-http://yourmoonlight.com/vim/2014/06/01/git-bash-vim
 http://yourmoonlight.com/%E6%9D%82%E8%AE%B0/2014/05/30/You-Raise-Me-Up
 http://yourmoonlight.com/%E6%9D%82%E8%AE%B0/2014/05/28/what-are-words
-http://yourmoonlight.com/test/2014/05/26/vimtest
-http://yourmoonlight.com/learning/2014/05/26/learning-markdown-test
-http://yourmoonlight.com/%E6%9D%82%E8%AE%B0/2014/04/13/yourmoonlight

@@ -91,6 +91,7 @@ def slow_func():
 ```
 
 这里的process数量最好等于cpu核数。
+原文[地址](https://www.peterbe.com/plog/deco)。
 
 
 
